@@ -45,10 +45,11 @@ void Bomberman::createScene(void){
 //-------------------------------------------------------------------------------------
 bool Bomberman::frameRenderingQueued(const Ogre::FrameEvent& evt){
 
+	/*
 	if( mSceneMgr->getEntity("Bomb")->getAnimationState("walk")->getEnabled() ){
 		mSceneMgr->getEntity("Bomb")->getAnimationState("walk")->addTime(evt.timeSinceLastFrame * 2);
 	}
-
+	*/
 	return BaseApplication::frameRenderingQueued(evt);
 }
 //-------------------------------------------------------------------------------------
