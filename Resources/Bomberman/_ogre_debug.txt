@@ -1,0 +1,27 @@
+11:17:13: Creating resource group General
+11:17:13: Creating resource group Internal
+11:17:13: Creating resource group Autodetect
+11:17:13: Registering ResourceManager for type Mesh
+11:17:13: Registering ResourceManager for type Material
+11:17:13: Registering ResourceManager for type Skeleton
+11:17:13: XMLSkeletonSerializer: reading XML data from D:\Desktop\Jonathan\Palestra\Cursos\Bomberman\Resources\Bomberman\bomberman.skeleton.xml...
+11:17:13: XMLSkeletonSerializer: Reading Bones name...
+11:17:13: XMLSkeletonSerializer: Reading Hierarchy data...
+11:17:13: XMLSkeletonSerializer: Reading Bones data...
+11:17:13: XMLSkeletonSerializer: Reading Animations data...
+11:17:13: Animation: nom: walk et longueur: 3.33333
+11:17:13: Animation: nom: stand et longueur: 0.0416667
+11:17:13: Animation: nom: model et longueur: 0.0416667
+11:17:13: XMLSkeletonSerializer: Finished. Running SkeletonSerializer...
+11:17:13: Exporting bones..
+11:17:13: Bones exported.
+11:17:13: Exporting animations, count=3
+11:17:13: Exporting animation: model
+11:17:13: Animation exported.
+11:17:13: Exporting animation: stand
+11:17:13: Animation exported.
+11:17:13: Exporting animation: walk
+11:17:13: Animation exported.
+11:17:13: Unregistering ResourceManager for type Skeleton
+11:17:13: Unregistering ResourceManager for type Material
+11:17:13: Unregistering ResourceManager for type Mesh

@@ -1,0 +1,18 @@
+// bomberman_material genrated by blender2ogre 0.6.0
+
+material bomberman_material 
+{
+
+    technique
+    {
+        pass bomberman_material
+        {
+ 
+            texture_unit 
+            {
+                texture Bomberman_uv.png
+ 
+            }
+        }
+    }
+}

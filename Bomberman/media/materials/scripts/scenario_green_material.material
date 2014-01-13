@@ -1,0 +1,20 @@
+// scenario_green_material genrated by blender2ogre 0.6.0
+
+material scenario_green_material 
+{
+
+	receive_shadows on 
+	
+    technique
+    {
+        pass
+        {
+
+
+            texture_unit 
+            {
+                texture scenario_green_uv.png
+            }
+        }
+    }
+}
