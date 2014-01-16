@@ -18,9 +18,14 @@ public:
 	Ogre::Entity* getEntity();
 	void setEntity( Ogre::Entity* _entity );
 
+	Ogre::Real getMovimentSpeed();
+	void setMovimentSpeed( Ogre::Real real );
+
 private:
 	GameEnums::Direction direction;
 	Ogre::SceneNode* node;
 	Ogre::Entity* entity;
+
+	Ogre::Real movimentSpeed;
 };
 #endif // #ifndef __HERO_h_

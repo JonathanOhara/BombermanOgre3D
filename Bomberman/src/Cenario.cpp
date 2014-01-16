@@ -75,7 +75,7 @@ void Cenario::iniciarCenario(){
 				elementoEntidade = Bomberman::getInstance()->mSceneMgr->createEntity( "bomberman", "bomberman.mesh" );
 				elementoEntidade->setCastShadows(true);
 
-				elementoNode->setPosition( Ogre::Vector3( i, 0, j * - 1 ) );
+				elementoNode->setPosition( Ogre::Vector3( i, 0.5f, j * - 1 ) );
 				elementoNode->attachObject( elementoEntidade );
 				elementoNode->setScale( 0.3f, 0.3f, 0.3f );
 				elementoNode->yaw( Ogre::Degree( 180 ) );

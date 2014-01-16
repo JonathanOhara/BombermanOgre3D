@@ -44,6 +44,21 @@ void Bomberman::createScene(void){
 }
 //-------------------------------------------------------------------------------------
 bool Bomberman::frameRenderingQueued(const Ogre::FrameEvent& evt){
+	
+	switch( hero->getDirection() ){
+		case GameEnums::UP:
+			hero->getNode()->translate( 0, 0, evt.timeSinceLastFrame * hero->getMovimentSpeed() * -1 );
+		break;
+		case GameEnums::DOWN:
+			hero->getNode()->translate( 0, 0, evt.timeSinceLastFrame * hero->getMovimentSpeed() );
+		break;
+		case GameEnums::LEFT:
+			hero->getNode()->translate( evt.timeSinceLastFrame * hero->getMovimentSpeed() * -1, 0, 0 );
+		break;
+		case GameEnums::RIGHT:
+			hero->getNode()->translate( evt.timeSinceLastFrame * hero->getMovimentSpeed(), 0, 0 );
+		break;
+	}
 
 	/*
 	if( mSceneMgr->getEntity("Bomb")->getAnimationState("walk")->getEnabled() ){
@@ -67,32 +82,37 @@ bool Bomberman::keyPressed( const OIS::KeyEvent &arg ){
 		hero->setDirection( GameEnums::LEFT );
 		break;
 	case OIS::KC_RIGHT:
-		hero->setDirection( GameEnums::LEFT );
+		hero->setDirection( GameEnums::RIGHT );
 		break;
 	}
-
-	/*
-	if (arg.key == OIS::KC_C) {
-		mSceneMgr->getEntity("Bomb")->getAnimationState("walk")->setEnabled( true );
-		mSceneMgr->getEntity("Bomb")->getAnimationState("walk")->setTimePosition(0);
-
-	}else if (arg.key == OIS::KC_V) {
-		mSceneMgr->getSceneNode("campo")->yaw( Ogre::Degree( 90 ) );
-	}else if (arg.key == OIS::KC_B) {
-		mSceneMgr->getSceneNode("campo")->pitch( Ogre::Degree( 90 ) );
-	}else if (arg.key == OIS::KC_N) {
-		mSceneMgr->getSceneNode("campo")->roll( Ogre::Degree( 90 ) );	
-	}else if (arg.key == OIS::KC_UP) {
-		mCamera->setPosition( Ogre::Vector3(6, 11, mCamera->getPosition().z - 1) );
-	}else if (arg.key == OIS::KC_DOWN) {
-		mCamera->setPosition( Ogre::Vector3(6, 11, mCamera->getPosition().z + 1) );
-	}
-	*/
-
 	return BaseApplication::keyPressed(arg);
 }
 //-------------------------------------------------------------------------------------
 bool Bomberman::keyReleased( const OIS::KeyEvent &arg ){
+
+	switch( arg.key ){
+	case OIS::KC_UP:
+		if( hero->getDirection() == GameEnums::UP ){
+			hero->setDirection( GameEnums::UP );
+		}
+		break;
+	case OIS::KC_DOWN:
+		if( hero->getDirection() == GameEnums::DOWN ){
+			hero->setDirection( GameEnums::DOWN );
+		}
+		break;
+	case OIS::KC_LEFT:
+		if( hero->getDirection() == GameEnums::LEFT ){
+			hero->setDirection( GameEnums::LEFT );
+		}
+		break;
+	case OIS::KC_RIGHT:
+		if( hero->getDirection() == GameEnums::RIGHT ){
+			hero->setDirection( GameEnums::RIGHT );
+		}
+		break;
+	}
+
 
 	return BaseApplication::keyReleased(arg);
 }
